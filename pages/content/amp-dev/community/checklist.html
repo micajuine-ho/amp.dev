@@ -39,10 +39,10 @@ $view: /views/custom.j2
 
   <section class="ap-t-checklist-metrics">
     <div class="ap-t-checklist-metrics-item">
-      <h4 class="ap-t-checklist-metrics-item-title">
+      <h3 class="ap-t-checklist-metrics-item-title">
         Loading speed<br>
-        <span class="fail">Needs improvement</span>
-      </h4>
+        <span class="warn">Needs improvement</span>
+      </h3>
       <div class="ap-t-checklist-metrics-item-score">
         <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">3.2 sec</div>
         <div class="ap-t-checklist-metrics-item-score-bar">
@@ -50,15 +50,16 @@ $view: /views/custom.j2
           <aside class="ap-t-checklist-metrics-item-score-bar-partition">4.0 sec</aside>
         </div>
       </div>
+      <h5>Opportunity to improve:  - 2.0 sec</h5>
       <p>
         Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
       </p>
     </div>
     <div class="ap-t-checklist-metrics-item">
-      <h4 class="ap-t-checklist-metrics-item-title">
+      <h3 class="ap-t-checklist-metrics-item-title">
         Interactivity<br>
         <span class="valid">Good experience</span>
-      </h4>
+      </h3>
       <div class="ap-t-checklist-metrics-item-score">
         <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">72 ms</div>
         <div class="ap-t-checklist-metrics-item-score-bar">
@@ -66,15 +67,16 @@ $view: /views/custom.j2
           <aside class="ap-t-checklist-metrics-item-score-bar-partition">300 ms</aside>
         </div>
       </div>
+      <h5>Opportunity to improve: - 12 ms</h5>
       <p>
         Interactivity is measured by the First Input Delay (FID). To provide a good user experience, pages should have a FID of less than 100 milliseconds.
       </p>
     </div>
     <div class="ap-t-checklist-metrics-item">
-      <h4 class="ap-t-checklist-metrics-item-title">
+      <h3 class="ap-t-checklist-metrics-item-title">
         Visual stability <br>
-        <span class="warn">Poor experience</span>
-      </h4>
+        <span class="fail">Poor experience</span>
+      </h3>
       <div class="ap-t-checklist-metrics-item-score">
         <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">0.43</div>
         <div class="ap-t-checklist-metrics-item-score-bar">
@@ -82,6 +84,7 @@ $view: /views/custom.j2
           <aside class="ap-t-checklist-metrics-item-score-bar-partition">0.25</aside>
         </div>
       </div>
+      <h5>Opportunity to improve: - 0.36</h5>
       <p>
         Visual stability is measured by the Cumulative Layout Shift (CLS). To provide a good user experience, pages should maintain a CLS of less than 0.1.
       </p>

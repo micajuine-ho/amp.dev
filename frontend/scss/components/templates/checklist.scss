@@ -164,6 +164,7 @@
       }
 
       &-score {
+        margin-bottom: 20px;
         font-size: 13px;
 
         &-indicator {
@@ -182,10 +183,11 @@
             border-top: 8px solid color('malachite');
           }
         }
+
         &-bar {
           position: relative;
-          height: 6px;
           width: 100%;
+          height: 5px;
           background: -moz-linear-gradient(left,  color('malachite') 0%, color('school-bus') 33%, color('school-bus') 66%,  color('red') 100%);
           background: -webkit-linear-gradient(left,  color('malachite') 0%,color('school-bus') 33%,color('school-bus') 66%, color('red') 100%);
           background: linear-gradient(to right,  color('malachite') 0%,color('school-bus') 33%,color('school-bus') 66%, color('red') 100%);
@@ -211,6 +213,11 @@
             }
           }
         }
+      }
+
+      h5 {
+        margin-bottom: 22px;
+        color: color('limed-spruce');
       }
 
       p {
