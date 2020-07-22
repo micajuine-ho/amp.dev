@@ -130,7 +130,7 @@
     }
   }
 
-  &-report {
+  &-metrics {
     display: flex;
     margin-left: 17px;
 
@@ -155,6 +155,46 @@
         }
         span.fail {
           color: color('red');
+        }
+      }
+
+      &-score {
+        &-indicator {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 16px;
+          white-space: nowrap;
+          font-size: 13px;
+          font-weight: bold;
+
+          &:after {
+            content: '';
+            margin: 2px auto 5px auto;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid color('malachite');
+          }
+        }
+        &-bar {
+          position: relative;
+          height: 6px;
+          width: 100%;
+          background: -moz-linear-gradient(left,  color('malachite') 0%, color('school-bus') 33%, color('school-bus') 66%,  color('red') 100%);
+          background: -webkit-linear-gradient(left,  color('malachite') 0%,color('school-bus') 33%,color('school-bus') 66%, color('red') 100%);
+          background: linear-gradient(to right,  color('malachite') 0%,color('school-bus') 33%,color('school-bus') 66%, color('red') 100%);
+
+          &-partition {
+            &:before {
+              content: '';
+              position: absolute;
+              top: -2px;
+              left: 33%;
+              width: 1px;
+              height: 10px;
+              background: color('black');
+            }
+          }
         }
       }
 

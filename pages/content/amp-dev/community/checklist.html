@@ -32,32 +32,59 @@ $view: /views/custom.j2
     <div class="ap-m-input-bar">
       <!-- Copy from playground ? -->
     </div>
-    <div class="ap-t-checklist-import-feedback">
+    <div class="ap-t-checklist-import-result">
 
     </div>
   </section>
 
-  <section class="ap-t-checklist-report">
-    <div class="ap-t-checklist-report-item">
-      <h4 class="ap-t-checklist-report-item-title">
+  <section class="ap-t-checklist-metrics">
+    <div class="ap-t-checklist-metrics-item">
+      <h4 class="ap-t-checklist-metrics-item-title">
         Loading speed<br>
         <span class="fail">Needs improvement</span>
       </h4>
-      <p>Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.</p>
+      <div class="ap-t-checklist-metrics-item-score">
+        <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">3.2 sec</div>
+        <div class="ap-t-checklist-metrics-item-score-bar">
+          <aside class="ap-t-checklist-metrics-item-score-bar-partition">2.5 sec</aside>
+          <aside class="ap-t-checklist-metrics-item-score-bar-partition">4.0 sec</aside>
+        </div>
+      </div>
+      <p>
+        Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
+      </p>
     </div>
-    <div class="ap-t-checklist-report-item">
-      <h4 class="ap-t-checklist-report-item-title">
+    <div class="ap-t-checklist-metrics-item">
+      <h4 class="ap-t-checklist-metrics-item-title">
         Interactivity<br>
         <span class="valid">Good experience</span>
       </h4>
-      <p>Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.</p>
+      <div class="ap-t-checklist-metrics-item-score">
+        <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">2.7sec</div>
+        <div class="ap-t-checklist-metrics-item-score-bar">
+          <aside class="ap-t-checklist-metrics-item-score-bar-partition">100 ms</aside>
+          <aside class="ap-t-checklist-metrics-item-score-bar-partition">300 ms</aside>
+        </div>
+      </div>
+      <p>
+        Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
+      </p>
     </div>
-    <div class="ap-t-checklist-report-item">
-      <h4 class="ap-t-checklist-report-item-title">
+    <div class="ap-t-checklist-metrics-item">
+      <h4 class="ap-t-checklist-metrics-item-title">
         Visual stability <br>
         <span class="warn">Poor experience</span>
       </h4>
-      <p>Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.</p>
+      <div class="ap-t-checklist-metrics-item-score">
+        <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">2.7sec</div>
+        <div class="ap-t-checklist-metrics-item-score-bar">
+          <aside class="ap-t-checklist-metrics-item-score-bar-partition">0.1</aside>
+          <aside class="ap-t-checklist-metrics-item-score-bar-partition">0.25</aside>
+        </div>
+      </div>
+      <p>
+        Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
+      </p>
     </div>
   </section>
 
