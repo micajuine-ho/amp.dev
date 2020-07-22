@@ -4,9 +4,9 @@ $order: 2
 $view: /views/custom.j2
 
 ---
-{% do doc.styles.addCssFile('css/components/templates/checklist.css') %}
+{% do doc.styles.addCssFile('css/components/templates/web-vitals.css') %}
 
-<main class="ap--main ap-t-checklist">
+<main class="ap--main ap-t-vitals">
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
@@ -23,31 +23,31 @@ $view: /views/custom.j2
     </div>
   </section>
 
-  <section class="ap-t-checklist-intro">
-    <p class="ap-t-checklist-intro-text">Web Vitals is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.<br><br>Google has provided a number of tools over the years to measure and report on performance. Some developers are experts at using these tools, while others have found the abundance of both tools and metrics challenging to keep up with.</p>
+  <section class="ap-t-vitals-intro">
+    <p class="ap-t-vitals-intro-text">Web Vitals is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.<br><br>Google has provided a number of tools over the years to measure and report on performance. Some developers are experts at using these tools, while others have found the abundance of both tools and metrics challenging to keep up with.</p>
   </section>
 
-  <section class="ap-t-checklist-import">
-    <h2 class="ap-t-checklist-import-title">Analyze your AMP page</h2>
+  <section class="ap-t-vitals-import">
+    <h2 class="ap-t-vitals-import-title">Analyze your AMP page</h2>
     <div class="ap-m-input-bar">
       <!-- Copy from playground ? -->
     </div>
-    <div class="ap-t-checklist-import-result">
+    <div class="ap-t-vitals-import-result">
 
     </div>
   </section>
 
-  <section class="ap-t-checklist-metrics">
-    <div class="ap-t-checklist-metrics-item">
-      <h3 class="ap-t-checklist-metrics-item-title">
+  <section class="ap-t-vitals-metrics">
+    <div class="ap-t-vitals-metrics-item">
+      <h3 class="ap-t-vitals-metrics-item-title">
         Loading speed<br>
         <span class="warn">Needs improvement</span>
       </h3>
-      <div class="ap-t-checklist-metrics-item-score">
-        <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">3.2 sec</div>
-        <div class="ap-t-checklist-metrics-item-score-bar">
-          <aside class="ap-t-checklist-metrics-item-score-bar-partition">2.5 sec</aside>
-          <aside class="ap-t-checklist-metrics-item-score-bar-partition">4.0 sec</aside>
+      <div class="ap-t-vitals-metrics-item-score">
+        <div id="lcp-indicator" class="ap-t-vitals-metrics-item-score-indicator">3.2 sec</div>
+        <div class="ap-t-vitals-metrics-item-score-bar">
+          <aside class="ap-t-vitals-metrics-item-score-bar-partition">2.5 sec</aside>
+          <aside class="ap-t-vitals-metrics-item-score-bar-partition">4.0 sec</aside>
         </div>
       </div>
       <h5>Opportunity to improve:  - 2.0 sec</h5>
@@ -55,16 +55,16 @@ $view: /views/custom.j2
         Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
       </p>
     </div>
-    <div class="ap-t-checklist-metrics-item">
-      <h3 class="ap-t-checklist-metrics-item-title">
+    <div class="ap-t-vitals-metrics-item">
+      <h3 class="ap-t-vitals-metrics-item-title">
         Interactivity<br>
         <span class="valid">Good experience</span>
       </h3>
-      <div class="ap-t-checklist-metrics-item-score">
-        <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">72 ms</div>
-        <div class="ap-t-checklist-metrics-item-score-bar">
-          <aside class="ap-t-checklist-metrics-item-score-bar-partition">100 ms</aside>
-          <aside class="ap-t-checklist-metrics-item-score-bar-partition">300 ms</aside>
+      <div class="ap-t-vitals-metrics-item-score">
+        <div id="lcp-indicator" class="ap-t-vitals-metrics-item-score-indicator">72 ms</div>
+        <div class="ap-t-vitals-metrics-item-score-bar">
+          <aside class="ap-t-vitals-metrics-item-score-bar-partition">100 ms</aside>
+          <aside class="ap-t-vitals-metrics-item-score-bar-partition">300 ms</aside>
         </div>
       </div>
       <h5>Opportunity to improve: - 12 ms</h5>
@@ -72,16 +72,16 @@ $view: /views/custom.j2
         Interactivity is measured by the First Input Delay (FID). To provide a good user experience, pages should have a FID of less than 100 milliseconds.
       </p>
     </div>
-    <div class="ap-t-checklist-metrics-item">
-      <h3 class="ap-t-checklist-metrics-item-title">
+    <div class="ap-t-vitals-metrics-item">
+      <h3 class="ap-t-vitals-metrics-item-title">
         Visual stability <br>
         <span class="fail">Poor experience</span>
       </h3>
-      <div class="ap-t-checklist-metrics-item-score">
-        <div id="lcp-indicator" class="ap-t-checklist-metrics-item-score-indicator">0.43</div>
-        <div class="ap-t-checklist-metrics-item-score-bar">
-          <aside class="ap-t-checklist-metrics-item-score-bar-partition">0.1</aside>
-          <aside class="ap-t-checklist-metrics-item-score-bar-partition">0.25</aside>
+      <div class="ap-t-vitals-metrics-item-score">
+        <div id="lcp-indicator" class="ap-t-vitals-metrics-item-score-indicator">0.43</div>
+        <div class="ap-t-vitals-metrics-item-score-bar">
+          <aside class="ap-t-vitals-metrics-item-score-bar-partition">0.1</aside>
+          <aside class="ap-t-vitals-metrics-item-score-bar-partition">0.25</aside>
         </div>
       </div>
       <h5>Opportunity to improve: - 0.36</h5>
@@ -91,29 +91,29 @@ $view: /views/custom.j2
     </div>
   </section>
 
-  <section class="ap-t-checklist-list">
+  <section class="ap-t-vitals-list">
     <h2>Analyze</h2>
-    <amp-accordion class="ap-t-checklist-list-item" id="chapter-1" animate>
-      <section class="ap-t-checklist-list-item-section"
+    <amp-accordion class="ap-t-vitals-list-item" id="chapter-1" animate>
+      <section class="ap-t-vitals-list-item-section"
           id="chapter-1-1">
-        <header class="ap-t-checklist-list-item-section-header">
-          <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        <header class="ap-t-vitals-list-item-section-header">
+          <div class="ap-t-vitals-list-item-section-header-container">
+            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
+            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
-        <div class="ap-t-checklist-list-item-section-body">
+        <div class="ap-t-vitals-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-checklist-list-item-section-body-image">
+          <div class="ap-t-vitals-list-item-section-body-image">
             <amp-img src="/static/img/dummy-news-1.png"
                 width="200"
                 height="100"
                 layout="responsive">
             </amp-img>
-            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
+            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
           </div>
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
+          <span class="ap-t-vitals-list-item-section-body-separator"></span>
           <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
               on="tap:chapter-1.collapse(section='chapter-1-1'), chapter-1.expand(section='chapter-1-2'), chapter-1-1.scrollTo(duration=500)"
               type="button"
@@ -127,26 +127,26 @@ $view: /views/custom.j2
         </div>
       </section>
 
-      <section class="ap-t-checklist-list-item-section"
+      <section class="ap-t-vitals-list-item-section"
           id="chapter-1-2">
-        <header class="ap-t-checklist-list-item-section-header">
-          <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        <header class="ap-t-vitals-list-item-section-header">
+          <div class="ap-t-vitals-list-item-section-header-container">
+            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
+            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
-        <div class="ap-t-checklist-list-item-section-body">
+        <div class="ap-t-vitals-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-checklist-list-item-section-body-image">
+          <div class="ap-t-vitals-list-item-section-body-image">
             <amp-img src="/static/img/dummy-news-1.png"
                 width="200"
                 height="100"
                 layout="responsive">
             </amp-img>
-            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
+            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
           </div>
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
+          <span class="ap-t-vitals-list-item-section-body-separator"></span>
           <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
               on="tap:chapter-1.collapse(section='chapter-1-2'), chapter-1.expand(section='chapter-2-1'), chapter-1-2.scrollTo(duration=500)"
               type="button"
@@ -162,27 +162,27 @@ $view: /views/custom.j2
     </amp-accordion>
 
     <h2>Take action</h2>
-    <amp-accordion class="ap-t-checklist-list-item" id="chapter-2" animate>
-      <section class="ap-t-checklist-list-item-section"
+    <amp-accordion class="ap-t-vitals-list-item" id="chapter-2" animate>
+      <section class="ap-t-vitals-list-item-section"
           id="chapter-2-1">
-        <header class="ap-t-checklist-list-item-section-header">
-          <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        <header class="ap-t-vitals-list-item-section-header">
+          <div class="ap-t-vitals-list-item-section-header-container">
+            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
+            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
-        <div class="ap-t-checklist-list-item-section-body">
+        <div class="ap-t-vitals-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-checklist-list-item-section-body-image">
+          <div class="ap-t-vitals-list-item-section-body-image">
             <amp-img src="/static/img/dummy-news-1.png"
                 width="200"
                 height="100"
                 layout="responsive">
             </amp-img>
-            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
+            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
           </div>
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
+          <span class="ap-t-vitals-list-item-section-body-separator"></span>
           <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
               on="tap:chapter-1.collapse(section='chapter-2-1'), chapter-1.expand(section='chapter-2-2'), chapter-2-1.scrollTo(duration=500)"
               type="button"
@@ -196,26 +196,26 @@ $view: /views/custom.j2
         </div>
       </section>
 
-      <section class="ap-t-checklist-list-item-section"
+      <section class="ap-t-vitals-list-item-section"
           id="chapter-2-2">
-        <header class="ap-t-checklist-list-item-section-header">
-          <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        <header class="ap-t-vitals-list-item-section-header">
+          <div class="ap-t-vitals-list-item-section-header-container">
+            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
+            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
-        <div class="ap-t-checklist-list-item-section-body">
+        <div class="ap-t-vitals-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-checklist-list-item-section-body-image">
+          <div class="ap-t-vitals-list-item-section-body-image">
             <amp-img src="/static/img/dummy-news-1.png"
                 width="200"
                 height="100"
                 layout="responsive">
             </amp-img>
-            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
+            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
           </div>
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
+          <span class="ap-t-vitals-list-item-section-body-separator"></span>
           <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
               on="tap:chapter-2.expand"
               type="button"

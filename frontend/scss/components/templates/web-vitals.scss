@@ -14,7 +14,7 @@
 
 @import 'components/templates/_default.scss';
 
-.#{template('checklist')} {
+.#{template('vitals')} {
   $root: &;
   padding: 0 15px;
   background: color('whisper');
@@ -132,10 +132,12 @@
 
   &-metrics {
     display: flex;
+    flex-direction: column;
     margin-left: 17px;
 
     @media (min-width: 768px) {
-      grid-column: 3/24;
+      grid-column: 2/24;
+      flex-direction: row;
       margin-left: 0;
     }
 
@@ -148,8 +150,21 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      padding: 0 40px 10px 30px;
-      border-left: 1px solid color('gallery');
+      margin: 0 20px 15px 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid color('gallery');
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      @media (min-width: 768px) {
+        margin: 0;
+        padding: 0 40px 10px 30px;
+        border-left: 1px solid color('gallery');
+        border-bottom: 0;
+      }
 
       &-title {
         span.valid {
