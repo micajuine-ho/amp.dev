@@ -45,6 +45,13 @@
     padding: 2px 12px;
   }
 
+  &-outline {
+    box-shadow: none;
+    background-color: transparent;
+    color: color('oslo-gray');
+    border: 1px solid color('alto');
+  }
+
   &-flat {
     box-shadow: none;
     background-color: color('wild-sand');
