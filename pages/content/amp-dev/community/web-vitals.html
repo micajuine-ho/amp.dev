@@ -17,14 +17,17 @@ $view: /views/custom.j2
         </div>
         <div class="ap-o-stage-image">
           {% do doc.icons.useIcon('icons/vitals-header.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vitals-header"></use></svg>
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vitals-header"></use>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
   <section class="ap-t-vitals-intro">
-    <p class="ap-t-vitals-intro-text">Web Vitals is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.<br><br>Google has provided a number of tools over the years to measure and report on performance. Some developers are experts at using these tools, while others have found the abundance of both tools and metrics challenging to keep up with.</p>
+    <p class="ap-t-vitals-intro-text">Web Vitals is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.<br><br>Google has provided a number of tools over the
+      years to measure and report on performance. Some developers are experts at using these tools, while others have found the abundance of both tools and metrics challenging to keep up with.</p>
   </section>
 
   <section class="ap-t-vitals-import">
@@ -32,12 +35,8 @@ $view: /views/custom.j2
 
     {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
     <div class="ap-m-input-bar">
-      <input class="ap-m-input-bar-field"
-          type="url"
-          name="url"
-          placeholder="Your URL">
-      <button class="ap-m-input-bar-submit"
-          name="button">
+      <input class="ap-m-input-bar-field" type="url" name="url" placeholder="Your URL">
+      <button class="ap-m-input-bar-submit" name="button">
         ANALYZE
       </button>
     </div>
@@ -62,7 +61,7 @@ $view: /views/custom.j2
           <aside class="ap-t-vitals-metrics-item-score-bar-partition">4.0 sec</aside>
         </div>
       </div>
-      <h5>Opportunity to improve:  - 2.0 sec</h5>
+      <h5>Opportunity to improve: - 2.0 sec</h5>
       <p>
         Loading performance is measured by the Largest Contentful Paint (LCP). To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.
       </p>
@@ -103,138 +102,73 @@ $view: /views/custom.j2
     </div>
   </section>
 
-  <section class="ap-t-vitals-list">
-    <h2>Analyze</h2>
-    <amp-accordion class="ap-t-vitals-list-item" id="chapter-1" animate>
-      <section class="ap-t-vitals-list-item-section"
-          id="chapter-1-1">
-        <header class="ap-t-vitals-list-item-section-header">
-          <div class="ap-t-vitals-list-item-section-header-container">
-            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+  <section class="ap-t-vitals-tips">
+    <h2>Take action. Improve your AMP page.</h2>
+    <amp-accordion class="ap-t-vitals-tips-item" id="chapter-2" animate>
+      <section class="ap-t-vitals-tips-item-section">
+        <header class="ap-t-vitals-tips-item-section-header">
+          <div class="ap-t-vitals-tips-item-section-header-container">
+            <h4 class="ap-t-vitals-tips-item-section-header-title">Lorem ipsum dolor sit amet</h4>
+            <svg class="ap-t-vitals-tips-item-section-header-toggle">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+            </svg>
           </div>
         </header>
-        <div class="ap-t-vitals-list-item-section-body">
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-vitals-list-item-section-body-image">
-            <amp-img src="/static/img/dummy-news-1.png"
-                width="200"
-                height="100"
-                layout="responsive">
-            </amp-img>
-            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
-          </div>
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-vitals-list-item-section-body-separator"></span>
-          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
-              on="tap:chapter-1.collapse(section='chapter-1-1'), chapter-1.expand(section='chapter-1-2'), chapter-1-1.scrollTo(duration=500)"
-              type="button"
-              name="button">
+        <div class="ap-t-vitals-tips-item-section-body">
+          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
+          <span class="ap-t-vitals-tips-item-section-body-separator"></span>
+          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double" on="tap:chapter-1.collapse(section='chapter-2-1'), chapter-1.expand(section='chapter-2-2'), chapter-2-1.scrollTo(duration=500)" type="button" name="button">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/external.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+              </svg>
             </div>
             <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
           </button>
         </div>
       </section>
 
-      <section class="ap-t-vitals-list-item-section"
-          id="chapter-1-2">
-        <header class="ap-t-vitals-list-item-section-header">
-          <div class="ap-t-vitals-list-item-section-header-container">
-            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+      <section class="ap-t-vitals-tips-item-section" expanded>
+        <header class="ap-t-vitals-tips-item-section-header">
+          <div class="ap-t-vitals-tips-item-section-header-container">
+            <h4 class="ap-t-vitals-tips-item-section-header-title">Use the AMP Optimizer</h4>
+            <svg class="ap-t-vitals-tips-item-section-header-toggle">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+            </svg>
           </div>
         </header>
-        <div class="ap-t-vitals-list-item-section-body">
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-vitals-list-item-section-body-image">
-            <amp-img src="/static/img/dummy-news-1.png"
-                width="200"
-                height="100"
-                layout="responsive">
-            </amp-img>
-            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
-          </div>
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-vitals-list-item-section-body-separator"></span>
-          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
-              on="tap:chapter-1.collapse(section='chapter-1-2'), chapter-1.expand(section='chapter-2-1'), chapter-1-2.scrollTo(duration=500)"
-              type="button"
-              name="button">
-            <div class="ap-a-ico ap-m-lnk-icon">
-              {% do doc.icons.useIcon('icons/external.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-            </div>
-            <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
-          </button>
-        </div>
-      </section>
-    </amp-accordion>
+        <div class="ap-t-vitals-tips-item-section-body">
+          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ultrices sagittis orci a scelerisque purus.<br><br>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
+          <span class="ap-t-vitals-tips-item-section-body-separator"></span>
 
-    <h2>Take action</h2>
-    <amp-accordion class="ap-t-vitals-list-item" id="chapter-2" animate>
-      <section class="ap-t-vitals-list-item-section"
-          id="chapter-2-1">
-        <header class="ap-t-vitals-list-item-section-header">
-          <div class="ap-t-vitals-list-item-section-header-container">
-            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-          </div>
-        </header>
-        <div class="ap-t-vitals-list-item-section-body">
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-vitals-list-item-section-body-image">
-            <amp-img src="/static/img/dummy-news-1.png"
-                width="200"
-                height="100"
-                layout="responsive">
-            </amp-img>
-            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
-          </div>
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-vitals-list-item-section-body-separator"></span>
-          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
-              on="tap:chapter-1.collapse(section='chapter-2-1'), chapter-1.expand(section='chapter-2-2'), chapter-2-1.scrollTo(duration=500)"
-              type="button"
-              name="button">
-            <div class="ap-a-ico ap-m-lnk-icon">
-              {% do doc.icons.useIcon('icons/external.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
-            </div>
-            <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
-          </button>
         </div>
       </section>
 
-      <section class="ap-t-vitals-list-item-section"
-          id="chapter-2-2">
-        <header class="ap-t-vitals-list-item-section-header">
-          <div class="ap-t-vitals-list-item-section-header-container">
-            <h4 class="ap-t-vitals-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <svg class="ap-t-vitals-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+      <section class="ap-t-vitals-tips-item-section">
+        <header class="ap-t-vitals-tips-item-section-header">
+          <div class="ap-t-vitals-tips-item-section-header-container">
+            <h4 class="ap-t-vitals-tips-item-section-header-title">Lorem ipsum dolor sit amet</h4>
+            <svg class="ap-t-vitals-tips-item-section-header-toggle">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+            </svg>
           </div>
         </header>
-        <div class="ap-t-vitals-list-item-section-body">
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <div class="ap-t-vitals-list-item-section-body-image">
-            <amp-img src="/static/img/dummy-news-1.png"
-                width="200"
-                height="100"
-                layout="responsive">
-            </amp-img>
-            <div class="ap-t-vitals-list-item-section-body-image-caption">This is a caption</div>
-          </div>
-          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-vitals-list-item-section-body-separator"></span>
-          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
-              on="tap:chapter-2.expand"
-              type="button"
-              name="button">
+        <div class="ap-t-vitals-tips-item-section-body">
+          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
+          <span class="ap-t-vitals-tips-item-section-body-separator"></span>
+          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double" on="tap:chapter-1.collapse(section='chapter-2-1'), chapter-1.expand(section='chapter-2-2'), chapter-2-1.scrollTo(duration=500)" type="button" name="button">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/external.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+              </svg>
             </div>
             <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
           </button>
