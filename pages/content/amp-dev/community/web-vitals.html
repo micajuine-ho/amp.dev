@@ -29,11 +29,23 @@ $view: /views/custom.j2
 
   <section class="ap-t-vitals-import">
     <h2 class="ap-t-vitals-import-title">Analyze your AMP page</h2>
-    <div class="ap-m-input-bar">
-      <!-- Copy from playground ? -->
-    </div>
-    <div class="ap-t-vitals-import-result">
 
+    {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
+    <div class="ap-m-input-bar">
+      <input class="ap-m-input-bar-field"
+          type="url"
+          name="url"
+          placeholder="Your URL">
+      <button class="ap-m-input-bar-submit"
+          name="button">
+        ANALYZE
+      </button>
+    </div>
+    <div id="import-result" class="ap-t-vitals-import-result warn">
+      <div class="ap-t-vitals-import-result-text">
+        <h3>Sorry. Your AMP page failed.</h3>
+        <p>As soon as the AMP site does not meet the minimum requirements of one of the 3 categories, the Core Web Vitals Analysis is rated as "failed".</p>
+      </div>
     </div>
   </section>
 
