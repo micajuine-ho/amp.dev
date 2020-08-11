@@ -12,8 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import button from './button/button.js';
-import CheckPageExperience from './check/CheckPageExperience.js';
+export default class BaseCheck {
+  constructor(id) {
+    this.check = document.getElementById(`check-${id}`);
+    this.progress = this.check.querySelector('progress');
+  }
 
-const checkPX = new CheckPageExperience('px');
-checkPX.run();
+  run() {
+    // on load true
+    return;
+  }
+
+  onLoad() {
+
+  }
+
+  onSuccess() {
+
+  }
+
+  onError() {
+
+  }
+}

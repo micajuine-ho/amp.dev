@@ -12,8 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import button from './button/button.js';
-import CheckPageExperience from './check/CheckPageExperience.js';
+import BaseCheck from './BaseCheck.js';
 
-const checkPX = new CheckPageExperience('px');
-checkPX.run();
+export default class CheckPageExperience extends BaseCheck {
+  constructor(id) {
+    super(id);
+
+    this.apiEndpoint = ''
+  }
+
+  run() {
+    console.log('Run');
+  }
+}
