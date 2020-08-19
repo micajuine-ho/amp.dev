@@ -13,7 +13,10 @@
 // limitations under the License.
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
-import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
+import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+
+import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
+import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
 export default class PageExperience {
   constructor() {
@@ -22,6 +25,9 @@ export default class PageExperience {
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
     this.reportViews = {};
+
+    this.pageExperienceCheck = new PageExperienceCheck();
+    this.safeBrowsingCheck = new SafeBrowsingCheck();
   }
 
   isValidURL(inputUrl) {
@@ -42,17 +48,42 @@ export default class PageExperience {
     } else {
       this.toggleLoading(true);
 
-      const check = new PageExperienceCheck();
-      const report = await check.run(inputUrl);
+      // Gather errors from all test runs
+      const errors = [];
 
-      for (const [id, metric] of Object.entries(
-        report.coreWebVitals.fieldData
-      )) {
-        this.reportViews[id] =
-          this.reportViews[id] || new CoreWebVitalsReport(document, id);
-        this.reportViews[id].render(metric);
-      }
-      // TODO: Show error message in UI
+      // Core Web Vitals
+      this.pageExperienceCheck.run(inputUrl).then((pageExperienceReport) => {
+        const error = pageExperienceReport[0];
+        if (error) {
+          errors.push(error);
+          // TODO: Trigger error handling
+          return;
+        }
+
+        const data = pageExperienceReport[1];
+        for (const [id, metric] of Object.entries(
+          data.coreWebVitals.fieldData
+        )) {
+          this.reportViews[id] =
+            this.reportViews[id] || new CoreWebVitalsReportView(document, id);
+          this.reportViews[id].render(metric);
+        }
+      });
+
+      // Additional checks
+      this.safeBrowsingCheck.run(inputUrl).then((safeBrowsingReport) => {
+        const [error, data] = safeBrowsingReport;
+        if (error) {
+          errors.push(error);
+        }
+        this.reportViews['safeBrowsing'] = new BooleanCheckReportView(
+          document,
+          'safe-browsing'
+        );
+        this.reportViews['safeBrowsing'].render(data);
+      });
+
+      // TODO: Check error array and render banner in UI
     }
 
     this.toggleLoading(false);
