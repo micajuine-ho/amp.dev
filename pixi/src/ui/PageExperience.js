@@ -16,6 +16,7 @@ import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
 import ValidationCheck from '../checks/ValidationCheck.js'
 
+import SatusBannerView from './SatusBannerView.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
@@ -25,15 +26,13 @@ export default class PageExperience {
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
-    this.banner = document.getElementById('status-banner');
-    this.bannerTitle = this.banner.querySelector('h3');
-    this.bannerText = this.banner.querySelector('p');
-
-    this.reportViews = {};
+    this.satusBannerView = new SatusBannerView(document);
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
     this.validationCheck = new ValidationCheck();
+
+    this.reportViews = {};
   }
 
   isValidURL(inputUrl) {
@@ -47,7 +46,6 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     const inputUrl = this.input.value;
-    this.bannerTitle.textContent = 'Analyzing your website...';
 
     if (!this.isValidURL(inputUrl)) {
       // TODO: Initialize lab data reports
@@ -99,8 +97,7 @@ export default class PageExperience {
         }
       }));
 
-
-      Promise.all(checkRuns).then(() => this.renderBanner(errors));
+      Promise.all(checkRuns).then(() => this.satusBannerView.render(errors));
     }
 
     this.toggleLoading(false);
@@ -110,22 +107,6 @@ export default class PageExperience {
     this.submit.classList.toggle('loading', force);
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
-    }
-  }
-
-  /**
-   * Check error array and render banner
-   * @param  {array} errors List of errors occurred in the checks
-   */
-  renderBanner(errors) {
-    if (!errors.length) {
-      this.banner.classList.add('pass');
-      this.bannerTitle.textContent = 'Wow! Your AMP page has a great page experience!';
-      this.bannerText.textContent = 'This page creates a great page experience!';
-    } else {
-      this.banner.classList.add('fail');
-      this.bannerTitle.textContent = 'Oops! Looks like something went wrong.';
-      this.bannerText.textContent = 'It seems like we weren\'t able to get reliable results. Please rerun the test.';
     }
   }
 }
