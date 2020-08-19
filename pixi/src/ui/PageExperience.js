@@ -24,6 +24,10 @@ export default class PageExperience {
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
+    this.banner = document.getElementById('status-banner');
+    this.bannerTitle = this.banner.querySelector('h3');
+    this.bannerText = this.banner.querySelector('p');
+
     this.reportViews = {};
 
     this.pageExperienceCheck = new PageExperienceCheck();
@@ -50,13 +54,13 @@ export default class PageExperience {
 
       // Gather errors from all test runs
       const errors = [];
+      const checkRuns = [];
 
       // Core Web Vitals
-      this.pageExperienceCheck.run(inputUrl).then((pageExperienceReport) => {
+      checkRuns.push(this.pageExperienceCheck.run(inputUrl).then((pageExperienceReport) => {
         const error = pageExperienceReport[0];
         if (error) {
           errors.push(error);
-          // TODO: Trigger error handling
           return;
         }
 
@@ -68,10 +72,10 @@ export default class PageExperience {
             this.reportViews[id] || new CoreWebVitalsReportView(document, id);
           this.reportViews[id].render(metric);
         }
-      });
+      }));
 
       // Additional checks
-      this.safeBrowsingCheck.run(inputUrl).then((safeBrowsingReport) => {
+      checkRuns.push(this.safeBrowsingCheck.run(inputUrl).then((safeBrowsingReport) => {
         const [error, data] = safeBrowsingReport;
         if (error) {
           errors.push(error);
@@ -81,9 +85,12 @@ export default class PageExperience {
           'safe-browsing'
         );
         this.reportViews['safeBrowsing'].render(data);
-      });
+      }));
 
-      // TODO: Check error array and render banner in UI
+      // AMP linter check
+
+
+      Promise.all(checkRuns).then(() => this.renderBanner(errors));
     }
 
     this.toggleLoading(false);
@@ -93,6 +100,22 @@ export default class PageExperience {
     this.submit.classList.toggle('loading', force);
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
+    }
+  }
+
+  /**
+   * Check error array and render banner
+   * @param  {array} errors List of errors occurred in the checks
+   */
+  renderBanner(errors) {
+    if (!errors.length) {
+      this.banner.classList.add('pass');
+      this.bannerTitle.textContent = 'Wow! Your AMP page has a great page experience!';
+      this.bannerText.textContent = 'This page creates a great page experience!';
+    } else {
+      this.banner.classList.add('fail');
+      this.bannerTitle.textContent = 'Oops! Looks like something went wrong.';
+      this.bannerText.textContent = 'It seems like we weren\'t able to get reliable results. Please rerun the test.';
     }
   }
 }
