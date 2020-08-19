@@ -47,6 +47,7 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     const inputUrl = this.input.value;
+    this.bannerTitle.textContent = 'Analyzing your website...';
 
     if (!this.isValidURL(inputUrl)) {
       // TODO: Initialize lab data reports
