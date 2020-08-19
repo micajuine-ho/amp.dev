@@ -14,6 +14,7 @@
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import ValidationCheck from '../checks/ValidationCheck.js'
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
@@ -32,6 +33,7 @@ export default class PageExperience {
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
+    this.validationCheck = new ValidationCheck();
   }
 
   isValidURL(inputUrl) {
@@ -88,6 +90,13 @@ export default class PageExperience {
       }));
 
       // AMP linter check
+      checkRuns.push(this.validationCheck.run(inputUrl).then((validationCheckReport) => {
+        const [error, data] = validationCheckReport;
+        console.log('error', error);
+        if (error) {
+          errors.push(error);
+        }
+      }));
 
 
       Promise.all(checkRuns).then(() => this.renderBanner(errors));
