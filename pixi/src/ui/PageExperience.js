@@ -14,6 +14,7 @@
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import HttpsCheck from '../checks/HttpsCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
@@ -81,6 +82,19 @@ export default class PageExperience {
           'safe-browsing'
         );
         this.reportViews['safeBrowsing'].render(data);
+      });
+
+
+      this.httpsCheck.run(inputUrl).then((httpsReport) => {
+        const [error, data] = safeBrowsingReport;
+        if (error) {
+          errors.push(error);
+        }
+        this.reportViews['https'] = new BooleanCheckReportView(
+          document,
+          'https'
+        );
+        this.reportViews['https'].render(data);
       });
 
       // TODO: Check error array and render banner in UI
